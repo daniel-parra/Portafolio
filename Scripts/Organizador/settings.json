@@ -1,0 +1,12 @@
+{
+    "ruta_escanear":"C:/Users/Downloads/",
+    "formatos":{
+        "Documentos" : [".pdf", ".txt", ".pptx", ".docx", ".xls", ".epub", ".xlsx", ".csv"],
+        "Video" : [".mp4", ".avi"],
+        "Imagen" : [".jpeg", ".svg", ".png", ".jpg", ".jfif"],
+        "Audio" : [".mp3"],
+        "Comprimidos" : [".zip"],
+        "Script_bd" : [".sql"],
+        "Script_programacion" : [".py", ".rb"]
+    }
+}
