@@ -1,0 +1,6 @@
+{
+    "archivo_mensaje":"mensaje.txt",
+    "numero_columnas":7,
+    "caracter_relleno":"X",
+    "archivo_cifrado":"mensaje_cifrado.txt"
+}
