@@ -20,6 +20,34 @@ class Settings():
         except Exception as e:
             print(e)
             
+def definir_logitud_relleno(longitud_cadena, num_colum):
+    try:
+        if longitud_cadena > 10000:
+            raise ValueError("La longitud del mensaje excede el permitido")
+        elif longitud_cadena % num_colum == 0:
+            return(longitud_cadena)
+        else:
+            multiplos = [numero for numero in range(0,10000) if numero % num_colum == 0 ]
+            for i in multiplos:
+                if i > longitud_cadena:
+                    longitud_cadena = i
+                    break
+            return longitud_cadena
+    except Exception as e:
+        print(e)
+
+def dividir_cadena(cadena, numero_caracteres):
+    cadena_nueva = ""
+    contador = 0
+    for caracter in cadena:
+        if contador == numero_caracteres:
+            cadena_nueva += "-"
+            contador = 0  
+        contador += 1
+        cadena_nueva += caracter
+    return (cadena_nueva.split("-"))   
+
+
 if __name__ == '__main__':
     os.system('cls')
     settings = Settings()
@@ -31,33 +59,6 @@ if __name__ == '__main__':
 
     numero_columnas = settings.config['numero_columnas']
     caracter_relleno = settings.config['caracter_relleno']
-
-    def definir_logitud_relleno(longitud_cadena, num_colum):
-        try:
-            if longitud_cadena > 10000:
-                raise ValueError("La longitud del mensaje excede el permitido")
-            elif longitud_cadena % num_colum == 0:
-                return(longitud_cadena)
-            else:
-                multiplos = [numero for numero in range(0,10000) if numero % num_colum == 0 ]
-                for i in multiplos:
-                    if i > longitud_cadena:
-                        longitud_cadena = i
-                        break
-                return longitud_cadena
-        except Exception as e:
-            print(e)
-
-    def dividir_cadena(cadena, numero_caracteres):
-        cadena_nueva = ""
-        contador = 0
-        for caracter in cadena:
-            if contador == numero_caracteres:
-                cadena_nueva += "-"
-                contador = 0  
-            contador += 1
-            cadena_nueva += caracter
-        return (cadena_nueva.split("-"))
 
     longitud_rellenar = definir_logitud_relleno(len(mensaje), numero_columnas)
 
